@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 /// <reference types="@cypress/xpath"/>
 
-describe("alias and invoke", ()=>{
+describe("alias and Invoke", ()=>{
     it("Validate specific hair care product", () =>{
         cy.visit('https://automationteststore.com/')
 
