@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 /// <reference types="@cypress/xpath"/>
 
-describe("Add Multiple Items to Basket", ()=>{
+describe("Add Multiple Items to the Basket", ()=>{
     before(() => {
         cy.fixture('products').then(function(data) {
             globalThis.data = data
