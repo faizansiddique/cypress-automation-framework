@@ -1,0 +1,264 @@
+class Test
+{
+
+p s v main()
+{
+
+
+}
+
+}
+
+-----------------------------------------------
+1) annotations
+2) html report  -- Customized
+3) Parallel testing
+4) Cross browser
+5) @dataProvide  -- excel/xml/hashMap
+6) threadsafe
+7) Rerun  -- 15 fail/8 fail/ 4 fail/ 4 fail
+8) Integrate testNg with eclipse/Intellij
+------------------------------------------------
+annotations
+
+@BeforeSuite
+@BeforeTest
+@BeforeClass
+@BeforeMethod
+@Test
+@AfterMethod
+@AfterClass
+@AfterTest
+@AfterSuite
+------------------------------------------------
+Before Suite  -- DB connectivity/ALM Integration
+Before Test  
+Before Class
+Before Method  -- browser launch
+Test 1         -- actual testcase
+After Method  -- browser close
+Before Method
+Test 2
+After Method
+Before Method
+Test 3
+After Method
+After Class
+After Test
+-------------------------------------------------
+XYZ application
+
+1) DB connection
+-----------------------
+@BeforeMethod
+
+2) browser launch
+-----------------------
+@Test
+
+login kiya 
+functionality
+logout kiya
+
+@Test
+login
+logout
+----------------------
+6) browser close
+
+-------------------------------------------------
+Priority
+
+class Test {
+
+@Test(Priority=1)
+public void login()
+
+@Test(Priority=-1)
+public void homePage()
+
+@Test(Priority=3)
+public void productPage()
+
+@Test(Priority=0)
+public void register()
+
+@Test(Priority=4)
+public void logOut()
+
+-2 -1 0 1 2 3
+-------------------------------------------------
+
+DB Initialization
+
+Browser launch
+Homepage Test
+Browser Closed
+
+Browser launch
+registrationPage Test
+Browser Closed
+
+Browser launch
+Login Test
+Browser Closed
+
+Browser launch
+Logout Test
+Browser Closed
+
+DB Close
+----------------------------
+DB Initialization
+
+Browser launch
+registrationPage Test
+Browser Closed
+
+Browser launch
+Login Test
+Browser Closed
+
+Browser launch
+Homepage Test
+Browser Closed
+
+Browser launch
+Logout Test
+Browser Closed
+
+DB Close
+----------------------------
+DB Initialization
+
+Browser launch
+Login Test
+Browser Closed
+
+Browser launch
+Homepage Test
+Browser Closed
+
+Browser launch
+registrationPage Test
+Browser Closed
+
+Browser launch
+Logout Test
+Browser Closed
+
+DB Close
+-----------------------------
+DB Initialization
+
+Browser launch
+Login Test
+Browser Closed
+
+Browser launch
+registrationPage Test
+Browser Closed
+
+Browser launch
+Logout Test
+Browser Closed
+
+Browser launch
+Homepage Test
+Browser Closed
+
+DB Close
+------------------------------
+Assert
+
+class Test{
+
+String name ="Norah";
+
+if(name.equalIgnoreCase("Noorie"){
+syso("True");
+}else{
+syso("False");
+}
+
+Soft -  
+Hard - 
+
+
+------------------------------
+Customized Report
+
+1) Listerner CLass Implementation
+
+2) Listerner in testNg.xml file
+<listeners>
+		<listener class-name="customListeners.ListenerTest"></listener>
+</listeners>
+
+3) define customized report in Listner class
+Reporter.log("Screenshot");
+Reporter.log("<a href=\"C:\\Automation Tutorial\\screenshot\\error.png\">Screenshot</a>");
+Reporter.log("<a href=\"C:\\Automation Tutorial\\screenshot\\error.png\" target=\"_blank\">Screenshot</a>");
+Reporter.log("<br/>");
+Reporter.log("<a href=\"C:\\Automation Tutorial\\screenshot\\error.png\" target=\"_blank\"><img height=200 width=200 src=\"C:\\Automation Tutorial\\screenshot\\error.png\"></a>");
+-----------------------------------
+Reportng
+1) download reportng jar
+
+2) download guice jar
+
+3) implement reportng package in listeners class
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+</listeners>
+
+4) to see the link use
+System.setProperty("org.uncommons.reportng.escape-output", "false");
+
+
+Reporter.log("<a href=\"C:\\Users\\Amaan\\Documents\\Java_Selenium\\testNg\\error.png\" target=\"_blank\">Screenshot</a>");
+C:\Users\Amaan\Documents\Java_Selenium\testNg
+---------------------------------------------------------------------
+DataProvider
+
+Username		Password
+faizan			Qwerty@1234
+Ramish			1234456678
+Salman			987654321
+Umair			India@123
+
+1) Object
+
+String		Integer		Double		Collection
+
+2) [][]
+--------------------------------------------------------------------
+Hashtable ht = new Hashtable();
+ht.put("key", "value");
+ht.put("Ramish", "12345");
+ht.put(excel.getCellData(sheetName, colNums, 1), excel.getCellData(sheetName, colNums, rowNums));
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
