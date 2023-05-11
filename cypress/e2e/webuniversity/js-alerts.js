@@ -58,7 +58,7 @@ describe('Handling Js Alerts', () => {
 
     });
 
-    it.only('Validate Modal pop up', () => {
+    it('Validate Modal pop up', () => {
         cy.visit('https://webdriveruniversity.com/')
         cy.get('#popup-alerts').invoke('removeAttr', 'target').click({force:true})
         cy.url().should('include', 'Popup-Alerts')

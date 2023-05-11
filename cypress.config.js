@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 const fs = require('fs-extra');
 const path = require('path');
+const cucumber = require('cypress-cucumber-preprocessor').default
 
 function getConfigurationByFile(file) {
   const pathToConfigFile = path.resolve('cypress\\config', `${file}.json`);
@@ -18,6 +19,7 @@ module.exports = defineConfig({
   projectId: '42uxh8',
   e2e: {
     setupNodeEvents(on, config) {
+      on('file:preprocessor', cucumber())
       const file = config.env.configFile || ''
       return getConfigurationByFile(file)
       // implement node event listeners here
@@ -46,6 +48,7 @@ module.exports = defineConfig({
       first_name: "Sarah",
       first_name1: " ",
       webdriveruni_homepage: "https://webdriveruniversity.com"
-    }
+    },
+    "experimentalStudio": true
   },
 });
